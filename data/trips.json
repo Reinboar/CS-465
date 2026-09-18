@@ -1,0 +1,15 @@
+[
+    {
+        "name" : "Great Barrier Reef",
+        "image" : "reef1.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    } , {
+        "name" : "Johnny's Reef",
+        "image" : "reef2.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    } , {
+        "name" : "Bobby's Reef", 
+        "image" : "reef3.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    }
+]
