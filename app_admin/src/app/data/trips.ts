@@ -1,0 +1,30 @@
+export const trips = [
+    {
+        "code" : "GALR210214",
+        "name" : "Great Barrier Reef",
+        "start" : "2021-02-14T08:00:00Z",
+        "resort" : "Emerald Bay, 3 stars",
+        "perPerson" : "799.00",
+        "length" : "4 nights / 5 days",
+        "image" : "reef1.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    } , {
+        "code" : "DAWR210315",
+        "name" : "Johnny's Reef",
+        "length" : "4 nights / 5 days",
+        "start" : "2021-03-15T08:00:00Z",
+        "resort" : "Blue Lagoon, 4 stars",
+        "perPerson" : "1199.00",
+        "image" : "reef2.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    } , {
+        "code" : "CLAR210621",
+        "name" : "Bobby's Reef", 
+        "length" : "4 nights / 5 days",
+        "start" : "2021-06-21T08:00:00Z",
+        "resort" : "Coral Sands, 5 stars",
+        "perPerson" : "1999.00",
+        "image" : "reef3.jpg",
+        "description" : "<p>Lorem ipsum</p>"
+    }
+];
