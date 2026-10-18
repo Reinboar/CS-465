@@ -1,9 +1,10 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Trip } from '../models/trip';
 import { TripData } from '../services/trip-data';
+import { Authentication } from '../services/authentication';
 
 @Component({
   imports: [CurrencyPipe, CommonModule],
@@ -14,6 +15,7 @@ import { TripData } from '../services/trip-data';
 })
 export class TripCard implements OnInit {
   @Input('trip') trip: any;
+  private authenticationService = inject(Authentication);
   
   constructor(private tripService: TripData, private router: Router) {}
   
@@ -38,5 +40,9 @@ export class TripCard implements OnInit {
           console.log('Error ' + error);
         }
       });
+  }
+  
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
   }
 }

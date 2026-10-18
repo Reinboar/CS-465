@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { trips } from '../data/trips';
 import { CurrencyPipe, JsonPipe } from '@angular/common';
 import { TripCard } from '../trip-card/trip-card';
@@ -6,6 +6,7 @@ import { Trip } from '../models/trip';
 import { TripData } from '../services/trip-data';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { Authentication } from '../services/authentication';
 
 @Component({
   imports: [JsonPipe, CurrencyPipe, TripCard, CommonModule],
@@ -18,6 +19,7 @@ import { Router } from '@angular/router';
 export class TripListing implements OnInit {
   trips = signal<Trip[]>([]);
   message: string = '';
+  authenticationService = inject(Authentication);
   
   constructor(private tripDataService: TripData, private router: Router) {
     console.log('trip-listing constructor');
@@ -49,5 +51,9 @@ export class TripListing implements OnInit {
   ngOnInit(): void {
     console.log('ngOnInit');
     this.getStuff();
+  }
+  
+  public isLoggedIn() {
+    return this.authenticationService.isLoggedIn();
   }
 }
